@@ -1,3 +1,4 @@
+from donations_pkg.homepage import show_donations
 from donations_pkg.homepage import show_homepage, donate
 from donations_pkg.user import login, register
 
@@ -8,7 +9,7 @@ database = {"admin":"password123"}
 donations = []
 authorized_user = ""
 
-show_homepage()
+#show_homepage()
 
 if authorized_user == "":
     print("You must be logged in to donate.")
@@ -44,8 +45,7 @@ while True:
             donations.append(donation)
         
     elif user_choice == "4":
-        #Print: TODO: Write Show Donations Functionality".
-        show_homepage()
+        show_donations(donations)
         
     elif user_choice == "5":
         sys.exit("Goodbye")

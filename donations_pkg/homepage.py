@@ -7,8 +7,16 @@ def show_homepage():
  
 def donate(username):
     donation_amt = float(input("Enter amount to donate:"))
-    donation = f"{username} donated {donation_amt}"
+    donation = donation_amt
     
     print("Thank you for your donation")
     return donation
     
+def show_donations(donations):
+    print("\n--- All Donations ---")
+    
+    if donations == []:
+        print("Currently, there are no donations.")
+    else:
+        for x in donations:
+            print(x)

@@ -1,7 +1,7 @@
 def login(database, username, password):
 
     username, password = username.strip(), password.strip()
-    
+
     if username in database: 
         if database.get(username) == password:
             print(f"Welcome {username}")

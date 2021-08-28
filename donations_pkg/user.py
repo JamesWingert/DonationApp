@@ -12,3 +12,12 @@ def login(database, username, password):
     else:
         print("Username and/or password doesn't exist")
         return ""
+    
+def register(database, username):
+    
+    if username in database:
+        print("Username already exists")
+        return ""
+    else:
+        print("Username created")
+        return username

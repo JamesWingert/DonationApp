@@ -1,5 +1,6 @@
 from donations_pkg.homepage import show_homepage
-from donations_pkg.user import login
+from donations_pkg.user import login, register
+
 import sys
 
 
@@ -23,16 +24,28 @@ while True:
         password = input("Password:\n")
         
         authorized_user = login(database, username, password)
+        
         show_homepage()
+        
     elif user_choice == "2":
         print("Please enter your username and password you'd like to register:")
-        #Print "TODO: Write Register Functionality".
+        username = input("Username:\n")
+        password = input("Password:\n")
+        
+        authorized_user = register(database, username)
+        
+        if authorized_user != "":
+            database[username] = password
+        
         show_homepage()
+        
     elif user_choice == "3":
         #Print "TODO: Write Donate Functionality".
         show_homepage()
+        
     elif user_choice == "4":
         #Print: TODO: Write Show Donations Functionality".
         show_homepage()
+        
     elif user_choice == "5":
         sys.exit("Goodbye")
